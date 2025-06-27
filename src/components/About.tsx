@@ -38,11 +38,11 @@ export default function About() {
               <div className="grid grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold text-primary mb-2">Years of Experience</h4>
-                  <p className="text-3xl font-bold">5+</p>
+                  <p className="text-3xl font-bold">2+</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-primary mb-2">Projects Completed</h4>
-                  <p className="text-3xl font-bold">50+</p>
+                  <p className="text-3xl font-bold">10+</p>
                 </div>
               </div>
             </div>

@@ -87,7 +87,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-muted-foreground">alex.chen@design.com</p>
+                    <p className="text-muted-foreground">jayeshpandhare733@gmail.com</p>
+                  </div>
+                   <div>
+                    <h4 className="font-medium">Mobile Number</h4>
+                    <p className="text-muted-foreground">9309839597</p>
                   </div>
                 </div>
 

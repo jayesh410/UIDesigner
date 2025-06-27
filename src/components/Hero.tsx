@@ -38,9 +38,9 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Profile Image */}
           <div className="relative">
-            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl animate-fade-in backdrop-blur-sm bg-background/10">
+            <div className="w-40 h-40 mx-auto  overflow-hidden  shadow-2xl animate-fade-in backdrop-blur-sm bg-background/10">
               <img
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop&crop=face"
+                src="/logo.jpg"
                 alt="Alex Chen"
                 className="w-full h-full object-cover"
               />
@@ -51,10 +51,10 @@ export default function Hero() {
           {/* Main Heading with backdrop blur for better readability */}
           <div className="space-y-4 animate-fade-in backdrop-blur-sm bg-background/10 rounded-lg p-6">
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight">
-              Hi, I'm Alex Chen
+              Hi, I'm Jayesh Pandhare
             </h1>
             <h2 className="text-2xl md:text-3xl font-light text-foreground">
-              UI/UX Designer & Creative Problem Solver
+              UI/UX Designer & Product Designer
             </h2>
           </div>
 
