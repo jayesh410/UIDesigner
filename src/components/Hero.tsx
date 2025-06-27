@@ -24,7 +24,7 @@ export default function Hero() {
         <spline-viewer 
           url="https://prod.spline.design/6Wq5h8KoLfg8dIJ6/scene.splinecode"
           className="w-full h-full"
-        ></spline-viewer>
+        />
       </div>
 
       {/* Fallback Animated Background for older browsers */}
