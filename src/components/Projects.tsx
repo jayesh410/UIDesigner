@@ -5,21 +5,42 @@ import { ArrowUp } from "lucide-react";
 export default function Projects() {
   const projects = [
     {
-      title: "E-commerce Mobile App",
+      title: "E-Lerning Platform",
       description: "Complete mobile app redesign focused on improving user conversion and shopping experience.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
       tags: ["UI Design", "Mobile", "E-commerce"],
       link: "#"
     },
     {
-      title: "SaaS Dashboard",
+      title: "Yatra Mitra",
       description: "Analytics dashboard design for B2B software with complex data visualization requirements.",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
       tags: ["UX Design", "Dashboard", "Analytics"],
       link: "#"
     },
     {
-      title: "Healthcare App",
+      title: "Portfolio",
+      description: "Patient management system focusing on accessibility and ease of use for medical professionals.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      tags: ["UX Research", "Healthcare", "Accessibility"],
+      link: "#"
+    },
+     {
+      title: "Portfolio",
+      description: "Patient management system focusing on accessibility and ease of use for medical professionals.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      tags: ["UX Research", "Healthcare", "Accessibility"],
+      link: "#"
+    },
+     {
+      title: "Portfolio",
+      description: "Patient management system focusing on accessibility and ease of use for medical professionals.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      tags: ["UX Research", "Healthcare", "Accessibility"],
+      link: "#"
+    },
+     {
+      title: "Portfolio",
       description: "Patient management system focusing on accessibility and ease of use for medical professionals.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
       tags: ["UX Research", "Healthcare", "Accessibility"],
