@@ -3,22 +3,22 @@ export default function Experience() {
   const experiences = [
     {
       title: "Senior UI/UX Designer",
-      company: "TechCorp Inc.",
-      period: "2022 - Present",
+      company: "Rakini Softech Pvt Ltd",
+      period: "2025 - Present",
       description: "Lead design for multiple product teams, establishing design systems and improving user experience across web and mobile platforms.",
       achievements: ["Increased user engagement by 40%", "Led design system implementation", "Mentored 3 junior designers"]
     },
     {
       title: "UI/UX Designer",
-      company: "Digital Solutions",
-      period: "2020 - 2022",
+      company: "Rakini Softech Pvt Ltd",
+      period: "2024 - Present",
       description: "Designed user interfaces for SaaS applications, conducted user research, and collaborated with development teams to implement designs.",
       achievements: ["Redesigned core product interface", "Reduced user onboarding time by 60%", "Conducted 50+ user interviews"]
     },
     {
-      title: "Junior Designer",
-      company: "Creative Agency",
-      period: "2019 - 2020",
+      title: "BCA (Computer Application",
+      company: "Dr D Y Patil College Pune",
+      period: "2023 - 2026",
       description: "Created visual designs for various clients, developed brand identities, and worked on web design projects.",
       achievements: ["Completed 25+ client projects", "Developed 5 brand identities", "Improved design process efficiency"]
     }
