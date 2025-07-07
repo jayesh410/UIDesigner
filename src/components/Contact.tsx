@@ -5,6 +5,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Contact as ContactIcon } from "lucide-react";
+import Spline from '@splinetool/react-spline';
+
+
+
+
+
+
+
+
+
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -59,8 +69,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto px-6 relative">
+         <Spline scene="https://prod.spline.design/zheY0e9-znW2wG30/scene.splinecode" className=" z-[0] absolute top-0 bottom-0 right-0 left-0 ">
+         
+         
+         
+         
+         </Spline>
+        <div className="max-w-4xl mx-auto z-50 border bg-transparent">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -71,6 +87,7 @@ export default function Contact() {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
+     
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>

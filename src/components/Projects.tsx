@@ -8,9 +8,9 @@ export default function Projects() {
       title: "Mobile Applications",
       projects: [
         {
-          title: "E-Learning Platform",
+          title: "Kisan Market",
           description: "Mobile app to boost learning retention.",
-          image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
+          image: "social2.png",
           tags: ["UI", "Mobile", "Learning"],
         },
         {
@@ -25,26 +25,33 @@ export default function Projects() {
       title: "Web Applications",
       projects: [
         {
-          title: "Library Management System",
+          title: "Portfolio",
           description: "Manage books, members, and returns.",
-          image: "https://images.unsplash.com/photo-1519337265831-281ec6cc8514?w=600&h=400&fit=crop",
+          image: "./port.png",
           tags: ["Web", "Admin", "Database"],
         },
         {
-          title: "Yatra Mitra",
+          title: "Addmission Platform",
           description: "B2B travel dashboard analytics.",
-          image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
+          image: "./add.png",
+          tags: ["Dashboard", "Analytics"],
+        },
+         {
+          title: "Counselling Platform",
+          description: "B2B travel dashboard analytics.",
+          image: "./add2.jpg",
           tags: ["Dashboard", "Analytics"],
         },
       ],
     },
+    
     {
       title: "Frame / Media Design",
       projects: [
         {
-          title: "Event Posters",
+          title: "Poster",
           description: "Bold typography cultural posters.",
-          image: "https://images.unsplash.com/photo-1611078489935-0cb9646c7584?w=600&h=400&fit=crop",
+          image: "./social1.png",
           tags: ["Poster", "Print", "Graphics"],
         },
         {
@@ -59,15 +66,21 @@ export default function Projects() {
       title: "Product Design",
       projects: [
         {
-          title: "Smart Home UI",
+          title: "LIZEARLE",
           description: "IoT app UI for smart home devices.",
-          image: "https://images.unsplash.com/photo-1603989501470-088d9f4f379d?w=600&h=400&fit=crop",
+          image: "product1.png",
           tags: ["IoT", "Home", "UX"],
         },
         {
-          title: "Medical Dashboard",
+          title: "CEO",
           description: "Accessibility-first patient system.",
-          image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+          image: "ceo.png",
+          tags: ["Healthcare", "Dashboard"],
+        },
+         {
+          title: "DM",
+          description: "Accessibility-first patient system.",
+          image: "dm.png",
           tags: ["Healthcare", "Dashboard"],
         },
       ],
@@ -103,7 +116,7 @@ export default function Projects() {
             <div className="relative">
               <button
                 onClick={() => scroll(idx, "left")}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow p-2"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-black rounded-full shadow p-2"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -153,7 +166,7 @@ export default function Projects() {
 
               <button
                 onClick={() => scroll(idx, "right")}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full shadow p-2"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-black rounded-full shadow p-2"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>

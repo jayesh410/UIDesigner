@@ -29,7 +29,7 @@ export default function Experience() {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Experience</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Career journey</h2>
             <p className="text-xl text-muted-foreground">
               My professional journey in design and technology
             </p>
