@@ -1,14 +1,16 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Contact as ContactIcon } from "lucide-react";
 import axios from "axios"
+
 // import Spline from '@splinetool/react-spline';
 
 export default function Contact() {
+  const apiBase = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_URL || '');
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,6 +18,9 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  useEffect(()=>{
+    startServer(apiBase);
+  },[])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -50,7 +55,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   setIsSubmitting(true);
 
   // Use proxy in development, full URL in production
-  const apiBase = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_URL || '');
+  
   try {
     const res = await axios.post(`${apiBase}/sendmessage`, formData);
     toast({
@@ -191,4 +196,18 @@ const handleSubmit = async (e: React.FormEvent) => {
       </div>
     </section>
   );
+}
+
+
+
+async function startServer(baseUrl:string){
+  try {
+    const response =await axios.get(`${baseUrl}/health`);
+    if(response.data){
+      console.log("Conected with sever success")
+    }
+  } catch (error) {
+    // toast.error("Error")
+    console.error("Error starting server", error)
+  }
 }
