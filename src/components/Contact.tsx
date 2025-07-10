@@ -5,16 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Contact as ContactIcon } from "lucide-react";
-import Spline from '@splinetool/react-spline';
-
-
-
-
-
-
-
-
-
+import axios from "axios"
+// import Spline from '@splinetool/react-spline';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -33,49 +25,59 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
+ 
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    if (!formData.email.includes("@")) {
-      toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
-      return;
-    }
+  if (!formData.name || !formData.email || !formData.message) {
+    toast({
+      title: "Missing Information",
+      description: "Please fill in all required fields.",
+      variant: "destructive"
+    });
+    return;
+  }
 
-    setIsSubmitting(true);
+  if (!formData.email.includes("@")) {
+    toast({
+      title: "Invalid Email",
+      description: "Please enter a valid email address.",
+      variant: "destructive"
+    });
+    return;
+  }
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
-      });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+  setIsSubmitting(true);
+
+  // Use proxy in development, full URL in production
+  const apiBase = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_URL || '');
+  try {
+    const res = await axios.post(`${apiBase}/sendmessage`, formData);
+    toast({
+      title: "Message Sent!",
+      description: res.data.message || "Thank you for reaching out!",
+    });
+    setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    console.log('error', error)
+    toast({
+      title: "Error",
+      description:
+        (axios.isAxiosError(error) && error.response?.status === 429)
+          ? "You have already submitted a message recently. Please try again later."
+          : "Failed to send message",
+      variant: "destructive"
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6 relative">
-         <Spline scene="https://prod.spline.design/zheY0e9-znW2wG30/scene.splinecode" className=" z-[0] absolute top-0 bottom-0 right-0 left-0 ">
-         
-         
-         
-         
-         </Spline>
+
         <div className="max-w-4xl mx-auto z-50 border bg-transparent">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
@@ -87,12 +89,12 @@ export default function Contact() {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Info */}
-     
+
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Get In Touch</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Whether you're looking to create a new digital experience, improve an existing product, 
+                  Whether you're looking to create a new digital experience, improve an existing product,
                   or just want to chat about design, I'm always excited to connect with new people and explore new opportunities.
                 </p>
               </div>
@@ -106,7 +108,7 @@ export default function Contact() {
                     <h4 className="font-medium">Email</h4>
                     <p className="text-muted-foreground">jayeshpandhare733@gmail.com</p>
                   </div>
-                   <div>
+                  <div>
                     <h4 className="font-medium">Mobile Number</h4>
                     <p className="text-muted-foreground">9309839597</p>
                   </div>
@@ -178,9 +180,9 @@ export default function Contact() {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 transition-all duration-300"
-                >
+                  className="w-full bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 transition-all duration-300">
                   {isSubmitting ? "Sending..." : "Send Message"}
+                
                 </Button>
               </form>
             </div>
