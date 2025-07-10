@@ -202,7 +202,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
 async function startServer(baseUrl:string){
   try {
-    const response =await axios.get(`${baseUrl}/health`);
+    const response =await axios.get(`${baseUrl}`);
     if(response.data){
       console.log("Conected with sever success")
     }
